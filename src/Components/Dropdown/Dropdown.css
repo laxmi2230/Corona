@@ -1,0 +1,54 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+   
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top:45px;
+    right:0px;
+    width: 200px;
+   
+    font-weight:bold;
+    font-size: large;
+    position: absolute;
+
+    
+    z-index: 1;
+}
+li a {
+   
+    text-decoration: none;
+}
+li {
+    
+    border-bottom: solid #e5e5e5;
+    width: 1000px;
+    
+   
+}
+li:last-child {
+    border-bottom: none;
+}
+li:hover {
+    
+    color: white;
+    width: 1000px;
+}
+pi{
+    width: max-content;
+}
+.button{
+    width:178px;
+    height:18px;
+    padding:12px;
+    border-radius:5px;
+    font-weight:bold;
+    
+}
+.button:before{
+    content:"";
+    
+}
