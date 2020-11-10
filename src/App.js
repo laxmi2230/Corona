@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
+import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
 import Particles from 'react-particles-js';
 //import logo from './logo.svg'
 import Logo from './Components/Logo/Logo';
 import Signin from './Components/Signin/Signin';
+import Register from './Components/Register/Register';
+import Upload  from './Components/Upload/Upload';
 import Dropdown from './Components/Dropdown/Dropdown';
 import Footer from './Components/Footer/Footer';
+
 //import Dropdown1 from './Components/Dropdown1/Dropdown1';
 
 
@@ -22,9 +26,13 @@ const particleOptions = {
 }
 
 function App() {
+  
 
   const [hide,setHide] = useState(1);
   const [hide2,setHide2] = useState(1);
+
+
+ 
   
   let content1 ={
     title: "How to prepare and protect yourself?",
@@ -97,8 +105,19 @@ function App() {
   const[hideFooter,setHideFooter]= useState(1);
   return (
     <div className="App">
-      <Logo />
-      <Signin />
+       <Particles className='particles' 
+       params={particleOptions} />
+       <Logo />
+      
+       <Router>
+       <Switch>
+         <Route exact path="/" component={Signin} />
+         <Route exact path="/Upload" component={Upload} />
+         <Route exact path="/Register" component={Register}/>
+         
+       </Switch>
+     </Router>
+      
       <div onClick={() => setHide(prevState => (1 - prevState))}><div onClick={() => setHideFooter(prevState => (1 - prevState))}><Dropdown content={content1} /></div></div>
       <br />
       <hr />
@@ -108,9 +127,6 @@ function App() {
       <br />
       {(hide && hide2) ? <div onClick={() => setHideFooter(prevState => (1 - prevState))}><Dropdown content={content3}/></div> : null} 
       {hideFooter ? <Footer/> : null}
-      <Particles className='particles' 
-                params={particleOptions} />
-      
     </div>
   );
 }
