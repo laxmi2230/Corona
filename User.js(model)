@@ -1,0 +1,18 @@
+const mongoose = require('mongoose');
+
+const user= mongoose.Schema({
+    username:{
+        type: String
+    },
+    age:{
+        type: Number
+    },
+    publicid:{
+        type: String
+    },
+    imageurl:{
+        type: String
+    }
+});
+
+module.exports = User = mongoose.model('user', user);
